@@ -1,0 +1,14 @@
+{
+  "token": "",
+  "clientId": "1509749498606256349",
+  "cargoMediadorId": "1509748766859722802",
+  "cargoSuporteId": "1509748763537969192",
+  "adminId": "1509748769221251193",
+  "chavePixPadrao": "de0d9822-bfe2-4a90-b111-cb0aab765769",
+  "canalBoasVindasId": "1509748962171813918",
+  "mediadores": {
+    "1186748750832619651": "pix-do-mediador-1@gmail.com"
+  },
+  "canalLogsGeralId": "1509748955066531846",
+  "canalLogsFilasId": "1509748948422627338"
+}
