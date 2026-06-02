@@ -2,9 +2,9 @@ const { Client, GatewayIntentBits, Partials, EmbedBuilder, ActionRowBuilder, But
 const fs = require('fs');
 const token = process.env.TOKEN;
 
-if (!config.token || !config.clientId) {
-    console.error('❌ ERRO CRÍTICO: Token ou clientId não configurados no config.json!');
-    process.exit(1);
+if (!process.env.TOKEN || !process.env.CLIENT_ID) {
+  console.error('❌ ERRO CRÍTICO: TOKEN ou CLIENT_ID não configurados nas Variáveis de Ambiente!');
+  process.exit(1);
 }
 
 const client = new Client({
