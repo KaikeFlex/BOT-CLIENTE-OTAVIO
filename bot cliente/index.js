@@ -7,6 +7,19 @@ if (!process.env.TOKEN || !process.env.CLIENT_ID) {
   process.exit(1);
 }
 
+// Substitui a leitura do arquivo por leitura do ambiente
+const config = {
+    token: process.env.TOKEN,
+    clientId: process.env.CLIENT_ID,
+    cargoMediadorId: process.env.CARGO_MEDIADOR_ID,
+    cargoSuporteId: process.env.CARGO_SUPORTE_ID,
+    adminId: process.env.ADMIN_ID,
+    // ... adicione as outras chaves aqui conforme necessário
+};
+
+// Se precisar de objetos complexos (como o de mediadores), use JSON.parse:
+config.mediadores = JSON.parse(process.env.MEDIADORES || '{}');
+
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
