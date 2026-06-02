@@ -46,12 +46,6 @@ function carregarDados() {
     }
 }
 
-// Servidor Web para manter o bot online na Render
-const http = require('http');
-http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Bot de Filas esta online!');
-}).listen(process.env.PORT || 3000);
 
 carregarDados(); // Carrega os dados se o arquivo existir
 
@@ -569,18 +563,14 @@ client.on('guildMemberAdd', async (member) => {
     await canal.send({ content: `👑 Ei ${member}, você acabou de entrar!`, embeds: [embedBoasVindas] }).catch(console.error);
 });
 
+// Servidor Web único para manter o bot online na Render
 const http = require('http');
 
-const http = require('http');
-
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('O bot esta online e rodando!');
-});
-
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`Servidor de manutencao rodando na porta ${PORT}`);
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot esta online!');
+}).listen(process.env.PORT || 3000, () => {
+    console.log("Servidor HTTP rodando e bot online!");
 });
 
 client.login(process.env.TOKEN);
