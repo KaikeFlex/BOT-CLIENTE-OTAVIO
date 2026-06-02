@@ -571,14 +571,16 @@ client.on('guildMemberAdd', async (member) => {
 
 const http = require('http');
 
+const http = require('http');
+
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Bot esta online!');
+  res.end('O bot esta online e rodando!');
 });
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor de manutencao rodando na porta ${PORT}`);
 });
 
 client.login(process.env.TOKEN);
