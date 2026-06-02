@@ -46,6 +46,15 @@ function carregarDados() {
     }
 }
 
+// Servidor Web para manter o bot online na Render
+const http = require('http');
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot de Filas esta online!');
+}).listen(process.env.PORT || 3000);
+
+carregarDados(); // Carrega os dados se o arquivo existir
+
 // ==========================================
 // 🛠️ FUNÇÃO AUXILIAR DE LOGS GERAIS
 // ==========================================
