@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits, Partials, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ChannelType, PermissionsBitField, REST, Routes, SlashCommandBuilder } = require('discord.js');
 const fs = require('fs');
-const config = require('./config.json');
+const token = process.env.TOKEN;
 
 if (!config.token || !config.clientId) {
     console.error('❌ ERRO CRÍTICO: Token ou clientId não configurados no config.json!');
