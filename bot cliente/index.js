@@ -560,4 +560,16 @@ client.on('guildMemberAdd', async (member) => {
     await canal.send({ content: `👑 Ei ${member}, você acabou de entrar!`, embeds: [embedBoasVindas] }).catch(console.error);
 });
 
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot esta online!');
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
+
 client.login(process.env.TOKEN);
